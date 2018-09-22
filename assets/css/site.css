@@ -1,0 +1,6 @@
+/* Use the site file to define common component classes or to prevent duplicate sets of classes in templates. */
+
+body {
+  font-family: 'Vesper Libre';
+  font-weight: 500;
+}

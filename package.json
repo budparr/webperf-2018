@@ -1,0 +1,36 @@
+{
+  "name": "hugostarter",
+  "version": "2.0.0",
+  "description": "Starter files for a Hugo project",
+  "main": "index.js",
+  "repository": "https://github.com/theNewDynamic/hugo-starter.git",
+  "author": "budparr <budparr@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "algolia": "atomic-algolia",
+    "build": "NODE_ENV=production webpack --config webpack.js",
+    "build-dev": "NODE_ENV=development webpack --config webpack.js --progress --watch",
+    "deploy": "yarn build && hugo --gc --minify",
+    "start": "hugo server --gc --disableFastRender"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@fullhuman/postcss-purgecss": "^1.0.1",
+    "autoprefixer": "^9.0.1",
+    "babel-loader": "^8.0.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "lazysizes": "^4.0.2",
+    "mini-css-extract-plugin": "^0.4.1",
+    "postcss": "^7.0.1",
+    "postcss-cli": "^6.0.0",
+    "postcss-import": "^12.0.0",
+    "postcss-loader": "^3.0.0",
+    "tailwindcss": "0.6.5",
+    "webpack": "^4.16.2",
+    "webpack-command": "^0.4.1",
+    "webpack-watch-files-plugin": "^1.0.2"
+  },
+  "dependencies": {}
+}
