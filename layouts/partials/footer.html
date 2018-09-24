@@ -3,9 +3,7 @@
     <div class="flex items-center">
       <a class="f7 fw4 hover:text-white no-underline px-3 color-inherit" href="{{ .Site.BaseURL }}" >
         &copy; {{ now.Format "2006" }} {{ .Site.Title }}
-      </a>
-      {{- partial "_global/menu.html" (dict "page" . "menu" "footer") -}}
-      {{ partial "_components/social-follow.html" (dict "cx" . "icon_size" "24px") }}
+      </a>      
     </div>
 
     <a class="dn md:inline-block f7 fw4 hover:text-gray no-underline px-3 py-2 color-inherit" href="https://thenewdynamic.com" >

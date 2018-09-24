@@ -2,13 +2,12 @@
     {{ with .PrevInSection }}
       <div>
         <span class="v-mid dib">&laquo;</span>
-        {{- partial "_components/link.html" (dict "item" .) -}}
+        
       </div>
     {{ end }}
 
     {{ with .NextInSection }}
-      <div>
-        {{- partial "_components/link.html" (dict "item" .) -}}
+      <div>        
         <span class="v-mid dib">&raquo;</span>
       </div>
   {{ end }}

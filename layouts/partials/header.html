@@ -1,0 +1,13 @@
+<header class="text-black">
+    {{ $currentPage := . }}
+    <div class="sticky pin-t py-3 px-8 color-inherit bg-inherit max-w-4xl mx-auto flex-col md:flex justify-between">
+        <div class="lg:flex flex-col">
+          <h1>
+            <a href="/" class="site-title text-green font-bold font-brand font-black no-underline mr-32">
+              {{ .Site.Title }}
+            </a>
+          </h1>
+          {{- partial "menu.html" (dict "page" . "menu" "main") -}}
+        </div>    
+    </div>    
+</header>
