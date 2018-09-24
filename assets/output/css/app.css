@@ -373,6 +373,14 @@ p a:hover {
   background-color: #2779bd;
 }
 
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
 .border-grey-lighter {
   border-color: #f1f5f8;
 }
@@ -453,8 +461,8 @@ p a:hover {
   font-weight: 900;
 }
 
-.h-4 {
-  height: 1rem;
+.h-64 {
+  height: 16rem;
 }
 
 .leading-tight {
@@ -653,6 +661,15 @@ p a:hover {
   position: fixed;
 }
 
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.pin-t {
+  top: 0;
+}
+
 .pin-r {
   right: 0;
 }
@@ -737,6 +754,10 @@ p a:hover {
   font-size: 2.25rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+}
+
 .italic {
   font-style: italic;
 }
@@ -765,6 +786,26 @@ p a:hover {
 
 .w-full {
   width: 100%;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-gap-8 {
+  grid-gap: 2rem;
+}
+
+.grid-gap-16 {
+  grid-gap: 4rem;
+}
+
+.grid-columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-columns-3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Use the site file to define common component classes or to prevent duplicate sets of classes in templates. */

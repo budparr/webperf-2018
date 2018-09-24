@@ -1,10 +1,49 @@
 {{ define "main" }}
-  
-{{ range first 1 (where .Site.RegularPages "Section" "article") }}
+
+
+<div class="grid grid-columns-2 grid-gap-8">
   <div>
-    <img src="{{ .Params.image }} " alt="" class="h-4">
-    {{ .Title }}
+      {{ range first 1 (where .Site.RegularPages "Section" "article") }}
+        {{ template "posts" . }}
+    {{ end }}
   </div>
+
+  <div>
+      {{ range first 3 (after 1 (where .Site.RegularPages "Section" "article")) }}
+      <h2 class="text-black leading-tight">{{ .Title }}</h2>
+    {{ end }}
+  </div>
+</div>  
+
+
+  <div class="mb-16 mb-4">
+    <h2 class="text-5xl font-black text-black uppercase font-brand">Startups</h2>
+  </div>
+  
+
+<div class="grid grid-columns-3 grid-gap-16">
+    
+        {{ range first 100 (after 1 (where .Site.RegularPages "Section" "article")) }}
+          {{ template "posts" . }}
+        {{ end }}
+        
+      
+</div>
 {{ end }}
 
+
+{{ define "posts"}}
+<div class="mb-16">
+    <div class="bg-cover bg-no-repeat h-64" style="background-image: url({{ .Params.image }});">
+       
+    </div>
+    <div>
+        <h2 class="text-black mb-1 leading-tight font-brand">{{ .Title }}</h2>
+        {{ with .Params.description }}
+          <div class="text-sm">
+              {{ . }}
+          </div>
+        {{ end }}
+    </div>
+</div>
 {{ end }}
