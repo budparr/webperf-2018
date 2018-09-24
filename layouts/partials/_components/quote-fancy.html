@@ -1,0 +1,11 @@
+<blockquote class="ml-0 text-quotes color-inherit text-2xl lg:text-3xl mb-1 mt-5 leading-tight">
+  <div class="text-4xl float-left moon-gray -mt-1 -ml-4 ">&#8223;</div>
+    {{ .Content| replaceRE "<p>" "" | replaceRE "</p>" ""  | markdownify }}&#8221;
+</blockquote>
+{{ with .Params.attribution }}
+  <div class="block color-inherit text-base mt-4 font-sans"> – {{ . | markdownify }}</div>
+{{ end }}
+{{ partial "_components/link-to-original.html" . }}
+<style media="screen">
+  blockquote, blockquote p {display: inline-block}
+</style>

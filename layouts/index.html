@@ -1,0 +1,10 @@
+{{ define "main" }}
+  
+{{ range first 1 (where .Site.RegularPages "Section" "article") }}
+  <div>
+    <img src="{{ .Params.image }} " alt="" class="h-4">
+    {{ .Title }}
+  </div>
+{{ end }}
+
+{{ end }}

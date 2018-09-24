@@ -1,0 +1,38 @@
+{{/*
+Loop through just this section's pages to get the taxonomies it displays (choice: categories, tags), or if a taxonomy page, get all the taxonomies
+  TODO: Make .Data/.Site pages loop more concise 
+*/}}
+
+{{$currentPage := .}}
+
+{{ if eq .Kind "taxonomy"}}
+{{ range .Site.Pages }}
+{{ with .Params.tags }}
+  {{ range sort . "value" "asc" }}
+    {{ $.Scratch.SetInMap "tags" . . }}
+  {{ end }}
+{{ end }}
+{{ with .Params.categories }}
+  {{ range sort . "value" "asc" }}
+    {{ $.Scratch.SetInMap "category" . . }}
+  {{ end }}
+{{ end}}
+
+{{ end}}
+{{else}}
+{{ range .Data.Pages }}
+  {{ with .Params.tags }}
+    {{ range sort . "value" "asc" }}
+      {{ $.Scratch.SetInMap "tags" . . }}
+    {{ end }}
+  {{ end }}
+  {{ with .Params.categories }}
+    {{ range sort . "value" "asc" }}
+      {{ $.Scratch.SetInMap "category" . . }}
+    {{ end }}
+  {{ end}}
+{{ end}}
+{{ end}}
+
+
+{{ partial "_components/category-tag-listing-display.html" . }}

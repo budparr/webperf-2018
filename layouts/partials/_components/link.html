@@ -1,0 +1,9 @@
+{{/*
+  Minimum content: ``"item" .``
+  {{- partial "_components/link.html" (dict "item") }}
+  {{- partial "_components/link.html" (dict "item" . "classes" "color-inherit inline-block no-underline dim") -}}
+  {{- partial "_components/link.html" (dict "item" . "variant_classes" "color-inherit inline-block text-sm no-underline dim text-bold ") -}}
+*/}}
+<a href="{{ .item.Permalink }}" class="{{ .classes | default "color-inherit inline-block no-underline dim" }} {{ .variant_classes | default "text-base text-bold" }}">
+  {{- .item.Title -}}
+</a>

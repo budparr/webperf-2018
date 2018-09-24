@@ -1,0 +1,28 @@
+<div class="flex flex-wrap justify-between text-lg text-grey">
+    {{ with .PrevInSection }}
+      <div>
+        <span class="v-mid dib">&laquo;</span>
+        {{- partial "_components/link.html" (dict "item" .) -}}
+      </div>
+    {{ end }}
+
+    {{ with .NextInSection }}
+      <div>
+        {{- partial "_components/link.html" (dict "item" .) -}}
+        <span class="v-mid dib">&raquo;</span>
+      </div>
+  {{ end }}
+</div>
+
+  <script>
+    document.body.onkeyup = function(e){
+
+      {{ if .PrevInSection }}
+        if (e.keyCode == '37') { window.location = '{{ .PrevInSection.Permalink }}'; }
+      {{ end }}
+      {{ if .NextInSection }}
+        if (e.keyCode == '39') { window.location = '{{.NextInSection.Permalink }}'; }
+      {{ end }}
+    };
+
+  </script>

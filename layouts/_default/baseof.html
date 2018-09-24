@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}" class="no-js">
+  <head>
+    <title>{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }} </title>
+    {{ block "head" .}}
+      {{- partial "_head/meta-and-links.html" . -}}
+    {{ end }}
+    {{block "scripts" .}}
+      {{ partialCached "_head/scripts.html" . }}
+    {{ end }}
+  </head>
+  <body class="{{.Kind}} m-0 body-color font-sans leading-normal text-base{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+    <div id="content" class="content md:grid">      
+      {{ block "header" . }}      
+        {{ partial "_global/header.html" . }}      
+      {{ end }}    
+        <main role="main">
+          <div class="min-h-screen p-8 text-grey-darker">
+            {{ block "hero" . }}{{ end }}
+            {{ block "main" . }}{{ end }}
+          </div>
+          {{ block "footer" . }}
+            {{- partial "_global/footer.html" . -}}
+          {{ end }}
+        </main>      
+      </div>
+      {{ block "page_bottom" . }}
+        {{- partial "_global/page-bottom.html" . -}}
+      {{ end }}
+  </body>
+</html>

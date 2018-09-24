@@ -1,0 +1,18 @@
+{{/*
+Show Hide Button
+id
+classes
+label
+*/}}
+
+
+<style>
+  input#show-{{.id}} + .hidden-{{.id}} {
+    display: none;
+  }
+  input#show-{{.id}}:checked + .hidden-{{.id}} {
+    display: block;
+  }
+</style>
+<label for="show-{{.id}}" class="dim inline-block rounded px-3 py-2 {{with .classes}}{{.}}{{end}}">{{with .label}}{{. | default "submit"}}{{end}}</label>
+<input type="checkbox" name="show-{{.id}}" class="hidden" value="{{with .label}}{{.}}{{end}}" id="show-{{.id}}" />

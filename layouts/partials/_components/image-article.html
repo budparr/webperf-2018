@@ -1,0 +1,7 @@
+{{ with .Params.images }}
+<div class="lazyload" data-noscript="">
+  <noscript>
+    <img src="{{ index . 0 | relURL }}" class="lazyload float-left mb-2 mr-3 mt-2 max-w-xs shadow-md" alt="Image " />
+  </noscript>
+</div>
+{{ end }}

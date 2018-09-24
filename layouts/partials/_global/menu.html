@@ -1,0 +1,29 @@
+{{ $currentPage := .page }}
+{{ $menu := index .page.Site.Menus (.menu) }}
+{{ with $menu }}
+  <nav aria-label="{{ $.menu }}">
+    <ul name="{{ $.menu }}" class="list-reset">
+      {{ range . }}
+        <li class="{{ .Identifier }} mb-4 text-2xl">
+          <a class="color-inherit no-underline{{ if in $currentPage.URL .URL }} active{{ end }}" href="{{ .URL }}" title="{{ .Name }} page">
+            {{ .Name }}
+          </a>
+          {{ if .HasChildren }}
+            <ul class="list-reset">
+              {{ range .Children }}
+                <li{{ if $currentPage.IsMenuCurrent "main" . }} class="bg-primary-color-dark"{{ end }}>
+                  <a href="{{ .URL }}">
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+{{ end }}
+{{/*
+TODO (BP): Make menu show active menu within sections. Using "in" above may not be accurate.
+*/}}

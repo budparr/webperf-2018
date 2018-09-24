@@ -1,0 +1,27 @@
+<div class="summary card mb-16">
+{{ if .Params.images}}
+  <img src="{{index (.Params.images) 0}}" class="w-full" />
+{{ end }}
+
+<section>
+  <div class="font-bold text-xl mb-2">
+  {{ partial "_components/item-title.html" . }}
+  </div>
+  <p class="text-grey-darker text-base">
+    {{- partial "_components/item-description.html" . -}}
+  </p>
+  {{- partial "_components/link-to-original.html" . -}}
+</section>
+
+{{ with .Params.image_credit }}
+  <span class="block font-sans text-xs italic p-2">{{ . }}</span>
+{{ end }}
+
+{{with .Params.tags}}
+  <section class="tags mt-2">
+    {{range .}}
+      <span class="inline-block">#{{.}}</span>
+    {{end}}
+  </section>
+{{end}}
+</div>
