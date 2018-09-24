@@ -43,7 +43,7 @@
 
 {{ define "posts"}}
   <div class="mb-8">
-    <div class="bg-cover bg-no-repeat h-64 bg-blue" style="background-image: url({{ .Params.image }});">
+    <div class="bg-cover bg-no-repeat h-64 bg-grey-lightest" style="background-image: url({{ .Params.image | absURL }});">
       <span class="opacity-0">{{ .Title }}</span>
     </div>
     <div>
