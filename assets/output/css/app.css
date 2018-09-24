@@ -327,6 +327,10 @@ h2 {
   background-color: #ef5753;
 }
 
+.bg-blue {
+  background-color: #3490dc;
+}
+
 .hover\:bg-grey:hover {
   background-color: #b8c2cc;
 }
@@ -456,6 +460,10 @@ h2 {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .opacity-25 {
