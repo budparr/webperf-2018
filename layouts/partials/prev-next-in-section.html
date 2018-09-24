@@ -1,27 +1,22 @@
 <div class="flex flex-wrap justify-between text-lg text-grey">
-    {{ with .PrevInSection }}
-      <div>
-        <span class="v-mid dib">&laquo;</span>
-        
-      </div>
-    {{ end }}
-
-    {{ with .NextInSection }}
-      <div>        
-        <span class="v-mid dib">&raquo;</span>
-      </div>
+  {{ with .PrevInSection }}      
+      <a href="{{ .URL }}" class="block md:mt-8 bg-grey-light hover:bg-grey hover:text-white  no-underline color-inherit px-6 py-1 rounded text-black text-2xl" title="{{ .Title }}">&laquo; {{ .Title }}</a>
   {{ end }}
+
+  {{ with .NextInSection }}
+  <a href="{{ .URL }}" class="block md:mt-8 bg-grey-light hover:bg-grey hover:text-white no-underline color-inherit px-6 py-1 rounded text-black text-2xl" title="{{ .Title }}">{{ .Title }} &raquo;</a>
+{{ end }}
 </div>
 
-  <script>
-    document.body.onkeyup = function(e){
+<script>
+  document.body.onkeyup = function(e){
 
-      {{ if .PrevInSection }}
-        if (e.keyCode == '37') { window.location = '{{ .PrevInSection.Permalink }}'; }
-      {{ end }}
-      {{ if .NextInSection }}
-        if (e.keyCode == '39') { window.location = '{{.NextInSection.Permalink }}'; }
-      {{ end }}
-    };
+    {{ if .PrevInSection }}
+      if (e.keyCode == '37') { window.location = '{{ .PrevInSection.Permalink }}'; }
+    {{ end }}
+    {{ if .NextInSection }}
+      if (e.keyCode == '39') { window.location = '{{.NextInSection.Permalink }}'; }
+    {{ end }}
+  };
 
-  </script>
+</script>
