@@ -323,12 +323,12 @@ h2 {
   background-color: #dae1e7;
 }
 
-.bg-red-light {
-  background-color: #ef5753;
+.bg-grey-lightest {
+  background-color: #f8fafc;
 }
 
-.bg-blue {
-  background-color: #3490dc;
+.bg-red-light {
+  background-color: #ef5753;
 }
 
 .hover\:bg-grey:hover {
@@ -583,10 +583,6 @@ h2 {
   text-decoration: none;
 }
 
-.grid {
-  display: grid;
-}
-
 .grid-gap-8 {
   grid-gap: 2rem;
 }
@@ -617,6 +613,10 @@ h2 {
 
   .md\:mt-8 {
     margin-top: 2rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
   }
 
   .md\:grid {
