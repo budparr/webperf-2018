@@ -4,11 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 //import WatchExternalFilesPlugin from 'webpack-watch-files-plugin'
 const WatchExternalFilesPlugin = require('webpack-watch-files-plugin').default;
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-z0-9-:\/]+/g);
-  }
-}
 
 module.exports = {
   mode: 'production',
@@ -51,33 +46,7 @@ module.exports = {
               ident: 'postcss',
               plugins: () => [
                 require('postcss-import'),
-                require('tailwindcss')('./assets/css/tailwind.js'),
-                require('@fullhuman/postcss-purgecss')({
-                  content: ['layouts/**/*.html', 'layout_modules/**/**/*.html'],
-                  extractors: [
-                    {
-                      extractor: TailwindExtractor,
-                      extensions: ['html'],
-                    },
-                  ],
-                  fontFace: false,
-                  whitelist: [                    
-                    'bg-primary-color',
-                    'body',
-                    'fill-current',
-                    'hidden',
-                    'install',
-                    'pagination',
-                    'opacity-25',
-                    'results-hidden',
-                    'rounded',
-                    'mx-2',
-                    'bg-red-light',
-                    'bg-grey-darker',
-                    'buttons',
-                    'kill',
-                  ],
-                }),
+                require('tailwindcss')('./assets/css/tailwind.js'),                
                 require('autoprefixer')({      
                   browsers: ['>3%']
                 }),
@@ -111,8 +80,7 @@ module.exports = {
 		new WatchExternalFilesPlugin({
       files: [
 				'./layouts/**/*.*',
-				'./layout_modules/**/*.*',
-				        
+				'./layout_modules/**/*.*',				        
       ]
     }),    
     new CleanWebpackPlugin(
