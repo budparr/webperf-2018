@@ -1,5 +1,5 @@
 ---
-title: "A Lime scooter rider died this morning in Washington, D.C., marking the second fatality this month"
+title: "Cleo, the ‘digital assistant’ that replaces your banking apps, picks up $10M Series A led by Balderton"
 date: 2018-09-22T16:45:50-04:00
 image: /uploads/image-2.jpg
 description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."

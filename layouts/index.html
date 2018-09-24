@@ -1,12 +1,12 @@
 {{ define "main" }}
   <div class="grid grid-columns-2 grid-gap-8">
     <div>
-      {{ range first 1 (where .Site.RegularPages "Section" "article") }}
+      {{ range first 1 (where .Site.RegularPages "Section" "article").Reverse }}
         {{ template "posts" . }}
       {{ end }}
     </div>
     <div>
-      {{ range first 3 (after 1 (where .Site.RegularPages "Section" "article")) }}
+      {{ range first 3 (after 1 (where .Site.RegularPages "Section" "article").Reverse) }}
         <h2 class="text-black leading-tight">
           {{ .Title }}
         </h2>
