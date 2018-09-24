@@ -1,49 +1,60 @@
 {{ define "main" }}
-
-
-<div class="grid grid-columns-2 grid-gap-8">
-  <div>
+  <div class="grid grid-columns-2 grid-gap-8">
+    <div>
       {{ range first 1 (where .Site.RegularPages "Section" "article") }}
         {{ template "posts" . }}
-    {{ end }}
-  </div>
-
-  <div>
+      {{ end }}
+    </div>
+    <div>
       {{ range first 3 (after 1 (where .Site.RegularPages "Section" "article")) }}
-      <h2 class="text-black leading-tight">{{ .Title }}</h2>
-    {{ end }}
-  </div>
-</div>  
-
+        <h2 class="text-black leading-tight">
+          {{ .Title }}
+        </h2>
+      {{ end }}
+    </div>
+  </div>  
 
   <div class="mb-16 mb-4">
-    <h2 class="text-5xl font-black text-black uppercase font-brand">Startups</h2>
+    <h2 class="text-5xl font-black text-black uppercase font-brand">
+      Startups
+    </h2>
   </div>
   
+  <div class="grid grid-columns-3 grid-gap-16">  
+    {{ range first 15 (after 1 (where .Site.RegularPages "Section" "article")) }}
+      {{ template "posts" . }}
+    {{ end }}            
+  </div>
 
-<div class="grid grid-columns-3 grid-gap-16">
+  <div class="mb-16 mb-4">
+      <h2 class="text-5xl font-black text-black uppercase font-brand">
+        Apps
+      </h2>
+    </div>
     
-        {{ range first 100 (after 1 (where .Site.RegularPages "Section" "article")) }}
-          {{ template "posts" . }}
-        {{ end }}
-        
-      
-</div>
+    <div class="grid grid-columns-3 grid-gap-16">  
+      {{ range first 100 (after 16 (where .Site.RegularPages "Section" "article")) }}
+        {{ template "posts" . }}
+      {{ end }}            
+    </div>
+
 {{ end }}
 
 
 {{ define "posts"}}
-<div class="mb-16">
+  <div class="mb-8">
     <div class="bg-cover bg-no-repeat h-64" style="background-image: url({{ .Params.image }});">
-       
+      <!-- background image -->
     </div>
     <div>
-        <h2 class="text-black mb-1 leading-tight font-brand">{{ .Title }}</h2>
-        {{ with .Params.description }}
-          <div class="text-sm">
-              {{ . }}
-          </div>
-        {{ end }}
+      <h2 class="text-black mb-1 leading-tight font-brand">
+        {{ .Title }}
+      </h2>
+      {{ with .Params.description }}
+        <div class="text-sm">
+          {{ . }}
+        </div>
+      {{ end }}
     </div>
-</div>
+  </div>
 {{ end }}
