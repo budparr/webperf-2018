@@ -1,19 +1,14 @@
 {{ define "main" }}
-  <div class="page-single_default mx-auto min-h-screen"> 
-      <article class="h-entry mx-auto max-w-lg py-2 lg:pt-5 px-4">
-          {{- partial "_components/page-heading.html" . -}}
-        
-          <section class="nested-copy-line-height leading-normal text-xl nested-no-underlines nested-imgTK mid-gray">
-        
-              
-            {{partial "_components/image-article.html" .}}
-            {{/* {{partial "_components/description.html" .}} */}}        
-            {{ .Content }}
-            {{partial "_components/venue.html" .}}
-        
-            {{partial "_components/link-to-original.html" (dict "item" .)}}
-          </section>
-        </article>
-        
+  <div class="max-w-xl mx-auto min-h-screen"> 
+    <article class="h-entry mx-auto max-w-lg py-2 lg:pt-5 px-4">
+      <h1 class="text-black text-5xl font-black font-brand">
+        {{ .Title }}
+      </h1>        
+      <img src="{{ .Params.image }} " alt="" class="max-w-full">          
+      {{ .Content }}          
+    </article>    
+    <div class="my-16">
+      {{ partial "prev-next-in-section.html" . }}    
+    </div>
   </div>
 {{ end }}

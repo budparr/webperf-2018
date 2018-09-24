@@ -48,7 +48,9 @@
     </div>
     <div>
       <h2 class="text-black mb-1 leading-tight font-brand">
-        {{ .Title }}
+        <a href="{{ .Permalink | relURL }}" class="text-black no-underline hover:text-grey">
+            {{ .Title }}
+        </a>
       </h2>
       {{ with .Params.description }}
         <div class="text-sm">

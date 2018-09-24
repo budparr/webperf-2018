@@ -487,6 +487,11 @@ p a:hover {
   margin-right: .5rem;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -566,6 +571,10 @@ p a:hover {
 
 .max-w-lg {
   max-width: 50rem;
+}
+
+.max-w-xl {
+  max-width: 60rem;
 }
 
 .max-w-4xl {
@@ -724,6 +733,10 @@ p a:hover {
 
 .hover\:text-black:hover {
   color: #22292f;
+}
+
+.hover\:text-grey:hover {
+  color: #b8c2cc;
 }
 
 .hover\:text-white:hover {
