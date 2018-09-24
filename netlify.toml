@@ -6,8 +6,14 @@ command = "hugo --gc --minify"
 HUGO_VERSION = "0.48"
 
 [context.production.environment]
-#HUGO_ENV = "production"
+HUGO_ENV = "demo"
 #HUGO_ENABLEGITINFO = "true"
+
+[context.slow.environment]
+HUGO_ENV = "demo"
+command = "hugo --gc"
+#HUGO_ENABLEGITINFO = "true"
+
 
 [context.deploy-preview]
 command = "hugo --gc -b $DEPLOY_PRIME_URL"
