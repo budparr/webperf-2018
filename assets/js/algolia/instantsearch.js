@@ -1,4 +1,4 @@
-import instantsearch from 'instantsearch.js/es';
+import instantsearch from 'instantsearch.js';
 
 // import widgets individually
 import { searchBox } from 'instantsearch.js/es/widgets';

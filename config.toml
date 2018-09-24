@@ -54,8 +54,10 @@ notAlternative = true
 home = [
 "HTML",
 "HEADERS",
-"REDIR"
+"REDIR",
+"JSON"
 ]
+
 
 [params]
 description = "Build Faster Better Websites with modern tools and techniques"

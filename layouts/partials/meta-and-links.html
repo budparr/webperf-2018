@@ -8,12 +8,21 @@
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 
-
-{{ if (fileExists "./assets/output/css/app.css") -}}
   {{ $stylesheet := resources.Get "output/css/app.css"  }}
   {{ with $stylesheet }}
     <link rel="stylesheet" href="{{ .Permalink | relURL }}">   
   {{ end }}
-{{ end }}
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2"></script>
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch-theme-algolia.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
 
 

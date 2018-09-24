@@ -1,0 +1,7 @@
+{{- $.Scratch.Add "index" slice -}}
+{{/* where .Site.Pages "Type" "not in"  (slice "page" "json")  */}}
+{{$content := .Site.RegularPages}}
+{{- range $content -}}
+{{- $.Scratch.Add "index" (dict "Section" .Section "objectID" (md5 .File.Path) "date" (.Date.Format "January 2, 2006") "sort_date" .Date.Unix "title" .Title "ref" .RelPermalink "tags" .Params.tags "content" .Plain) -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

@@ -2,8 +2,7 @@
 <html lang="{{ $.Site.LanguageCode | default "en" }}" class="no-js">
   <head>
     <title>{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }} </title>  
-      {{ partial "meta-and-links.html" . }}      
-      {{ partial "scripts.html" . }}   
+      {{ partial "meta-and-links.html" . }}            
       {{ partial "manifest.html" . }} 
   </head>
   <body class="{{.Kind}} m-0 body-color font-sans leading-normal text-base{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
