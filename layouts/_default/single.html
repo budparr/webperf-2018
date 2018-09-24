@@ -1,10 +1,11 @@
 {{ define "main" }}
+  {{ $image := replace .Params.image "/uploads" .Site.Params.image_domain }}
   <div class="max-w-xl mx-auto min-h-screen"> 
     <article class="h-entry mx-auto max-w-lg py-2 lg:pt-5 px-4">
       <h1 class="text-black text-5xl font-black font-brand">
         {{ .Title }}
       </h1>        
-      <img src="{{ .Params.image }} " alt="" class="max-w-full">          
+      <img src="{{ $image }} " alt="" class="max-w-full">          
       {{ .Content }}          
     </article>    
     <div class="my-16">

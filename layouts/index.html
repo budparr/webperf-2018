@@ -42,8 +42,9 @@
 
 
 {{ define "posts"}}
+  {{ $image := (replace .Params.image "/uploads" .Site.Params.image_domain) }}
   <div class="mb-8">
-    <div class="bg-cover bg-no-repeat h-64 bg-grey-lightest" style="background-image: url({{ .Params.image | absURL }});">
+    <div class="bg-cover bg-no-repeat h-64 bg-grey-lightest" style="background-image: url({{ $image }});">
       <span class="opacity-0">{{ .Title }}</span>
     </div>
     <div>
