@@ -10,8 +10,7 @@ import { pagination } from 'instantsearch.js/es/widgets';
 
 
 if (process.env.NODE_ENV == 'production') {
-	//var documentLoad = 'turbolinks:load';
-	var documentLoad = 'DOMContentLoaded';
+	var documentLoad = 'turbolinks:load';	
 } else {
 	var documentLoad = 'DOMContentLoaded';
 }
