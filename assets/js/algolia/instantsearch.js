@@ -56,7 +56,7 @@ document.addEventListener(documentLoad, function() {
 			poweredBy: true,
 			placeholder: 'Search Articles',
 			magnifier: false,
-			reset: true
+			reset: false
 		})
 	);
 	
