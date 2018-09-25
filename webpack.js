@@ -10,7 +10,9 @@ class TailwindExtractor {
   }
 }
 
-module.exports = {
+module.exports = env => {
+	console.log("NODE_ENV: ", process.env.NODE_ENV) // 'local'
+	return {
   mode: 'production',
   entry: {
     app: './assets/index.js'
@@ -128,4 +130,5 @@ module.exports = {
       filename: 'css/[name].css',
     }),
   ],
+}
 };

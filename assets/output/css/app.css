@@ -323,6 +323,10 @@ h2 {
   background-color: #dae1e7;
 }
 
+.bg-grey-lighter {
+  background-color: #f1f5f8;
+}
+
 .bg-grey-lightest {
   background-color: #f8fafc;
 }
