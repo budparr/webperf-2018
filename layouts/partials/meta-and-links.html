@@ -4,11 +4,9 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width,minimum-scale=1">
 {{ .Hugo.Generator }}
-{{ if eq (getenv "HUGO_ENV") "production" }}
-  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-{{ else }}
+
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-{{ end }}
+
 
 
 {{ if (fileExists "./assets/output/css/app.css") -}}
