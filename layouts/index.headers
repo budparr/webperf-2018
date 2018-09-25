@@ -9,14 +9,14 @@
   {{ $fonts := $.Scratch.Get "fonts" }}
   {{ $scripts :=  $.Scratch.Get "scripts" }}
 
-{{/* 
+
   {{$font_file := readDir "/static/fonts/" }}
   {{ range $font_file }}
     {{ if in .Name "woff2" -}}  
     Link: </fonts/{{ .Name }}>;rel="preload";as="font";crossorigin
     {{- end }}
   {{ end }}
- */}}
+
   
 
   {{ with $stylesheet }}    
