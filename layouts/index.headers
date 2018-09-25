@@ -17,7 +17,12 @@
     {{- end }}
   {{ end }}
 
-  
+  {{$font_file := readDir "/static/fonts/" }}
+  {{ range $font_file }}
+    {{ if in .Name "woff2" -}}  
+    /fonts/{{ .Name }} Cache-Control: public, max-age=31556926
+    {{- end }}
+  {{ end }}
 
   {{ with $stylesheet }}    
     Link: <{{ .Permalink | relURL }}>; rel=preload; as=style nopush
