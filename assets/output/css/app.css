@@ -284,8 +284,7 @@
 
 /* Modules */
 
-h1,
-h2 {
+h1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -403,24 +402,8 @@ h2 {
   background-color: #dae1e7;
 }
 
-.bg-grey-lighter {
-  background-color: #f1f5f8;
-}
-
-.bg-grey-lightest {
-  background-color: #f8fafc;
-}
-
 .hover\:bg-grey:hover {
   background-color: #b8c2cc;
-}
-
-.bg-no-repeat {
-  background-repeat: no-repeat;
-}
-
-.bg-cover {
-  background-size: cover;
 }
 
 .rounded {
@@ -467,14 +450,6 @@ h2 {
   font-weight: 900;
 }
 
-.h-64 {
-  height: 16rem;
-}
-
-.leading-tight {
-  line-height: 1.25;
-}
-
 .leading-normal {
   line-height: 1.5;
 }
@@ -493,20 +468,8 @@ h2 {
   margin-right: auto;
 }
 
-.mb-1 {
-  margin-bottom: .25rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
 }
 
 .mr-32 {
@@ -531,10 +494,6 @@ h2 {
 
 .min-h-screen {
   min-height: 100vh;
-}
-
-.opacity-0 {
-  opacity: 0;
 }
 
 .p-8 {
@@ -606,20 +565,12 @@ h2 {
   color: #38c172;
 }
 
-.hover\:text-grey:hover {
-  color: #b8c2cc;
-}
-
 .hover\:text-white:hover {
   color: #fff;
 }
 
 .text-xs {
   font-size: .75rem;
-}
-
-.text-sm {
-  font-size: .875rem;
 }
 
 .text-base {
@@ -634,32 +585,8 @@ h2 {
   font-size: 1.5rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
 .no-underline {
   text-decoration: none;
-}
-
-.grid-gap-8 {
-  grid-gap: 2rem;
-}
-
-.grid-gap-16 {
-  grid-gap: 4rem;
-}
-
-.grid-columns-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-columns-3 {
-  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Use the site file to define common component classes or to prevent duplicate sets of classes in templates. */

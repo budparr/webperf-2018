@@ -17,7 +17,14 @@
     {{- end }}
   {{ end }}
 
-  
+  {{$font_file := readDir "/static/fonts/" }}
+  {{ range $font_file }}
+    {{ if in .Name "woff2" -}}  
+    /fonts/{{ .Name }}
+    Cache-Control: public, max-age=31556926,immutable
+    {{- end }}
+  {{ end }}
+
   {{ with $stylesheet }}    
     Link: <{{ .Permalink | relURL }}>; rel=preload; as=style nopush
   {{ end }}
@@ -31,3 +38,16 @@
   {{end}}
   
 
+  # Set a long cache expiry on asset urls
+  {{ with $stylesheet }}    
+  {{ .Permalink | relURL }}
+  Cache-Control: public, max-age=31556926,immutable
+  {{end }}
+  {{ with $fonts }}    
+  {{ .Permalink | relURL }}
+  Cache-Control: public, max-age=31556926,immutable
+  {{end }}
+  {{ with $scripts }}
+  {{ .Permalink | relURL }}
+  Cache-Control: public, max-age=31556926,immutable
+  {{end}}
