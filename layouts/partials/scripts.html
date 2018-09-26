@@ -2,7 +2,6 @@
 {{ $scripts := resources.Get "output/js/app.js" }}
 {{ with $scripts }}
   {{ $scripts := . | fingerprint }}
-    <script type="text/javascript" src="{{ $scripts.Permalink | relURL }}" defer></script>
+  <script type="text/javascript" src="{{ $scripts.Permalink | relURL }}" integrity="{{ $scripts.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ $.Scratch.Set "scripts" $scripts }}    
 {{ end }} 
-
