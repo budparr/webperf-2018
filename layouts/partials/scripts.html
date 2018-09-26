@@ -5,3 +5,16 @@
   <script type="text/javascript" src="{{ $scripts.Permalink | relURL }}" integrity="{{ $scripts.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ $.Scratch.Set "scripts" $scripts }}    
 {{ end }} 
+
+<script>
+  if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/sw.js', {
+          scope: '/'
+      });
+      window.addEventListener('load', function() {
+          if (navigator.serviceWorker.controller) {
+              navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
+          }
+      });
+  }
+</script>
