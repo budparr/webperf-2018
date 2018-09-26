@@ -10,9 +10,9 @@
 {{/* better-2 */}}
 
 {{ if (fileExists "./assets/output/css/app.css") -}}
-{{ $stylesheet := resources.Get "output/css/app.css" | minify }}
-{{ with $stylesheet }}
-  <link rel="stylesheet" href="{{ .Permalink | relURL }}"> 
+{{ $stylesheet := resources.Get "output/css/app.css" | minify | fingerprint }}
+{{ with $stylesheet }}  
+  <link rel="stylesheet" href="{{ .Permalink | relURL }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"> 
   {{ $.Scratch.Set "stylesheet" . }}    
 {{ end }}
 {{ end }}
