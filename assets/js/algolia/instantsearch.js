@@ -18,30 +18,15 @@ document.addEventListener(documentLoad, function() {
 		appId: 'MLMX67K73T',
 		apiKey: '1e6569c09a7576db43cde699cba46cde',
 		indexName: 'all_content',
-		urlSync: false,
-		urlSync: {
-			getHistoryState: function() {
-				return {
-					turbolinks: true
-				};
-			}
-		},
+		urlSync: false,		
 		searchFunction: function(helper) {
-			var searchResults = document.getElementById('results');
-			var b = document.getElementsByTagName('BODY')[0];
-			if (helper.state.query === '') {
-				// searchResults.hide()
-				searchResults.classList.add('results-hidden');
-				b.classList.remove('search-displayed');
-				console.log('No Query');
-				return;
-			}
-			helper.search();
-			// searchResults.show()
-			console.log('query: ' + helper.state.query);
-			searchResults.classList.remove('results-hidden');
-
-			b.classList.add('search-displayed');
+			var searchResults = document.getElementById('search-results');
+    	if (helper.state.query === '') {
+      	//searchResults.hide();
+      	return;
+    	}
+    	helper.search();
+    //	searchResults.show();
 		}
 	});
 
@@ -64,7 +49,7 @@ document.addEventListener(documentLoad, function() {
 			templates: {
 				empty: 'No results',
 				item: function(data) {
-						return '<div class="my-4"><div class="text-xl text-black mb2">' + data.Section + '</div><a href="' + data.ref + '" class="no-underline font-brand hover:text-grey-dark text-2xl text-black mb-3">' + data.title + '</a></div>'
+						return '<div id="search-results" class="my-4"><div class="text-xl text-black mb2">' + data.Section + '</div><a href="' + data.ref + '" class="no-underline font-brand hover:text-grey-dark text-2xl text-black mb-3">' + data.title + '</a></div>'
 					}
 			},
 		})
