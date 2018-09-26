@@ -2,15 +2,12 @@ import instantsearch from 'instantsearch.js/es';
 
 // import widgets individually
 import { searchBox } from 'instantsearch.js/es/widgets';
-import { stats } from 'instantsearch.js/es/widgets';
-import { clearAll } from 'instantsearch.js/es/widgets';
-import { refinementList } from 'instantsearch.js/es/widgets';
 import { hits } from 'instantsearch.js/es/widgets';
-import { pagination } from 'instantsearch.js/es/widgets';
 
 
 if (process.env.NODE_ENV == 'production') {
-	var documentLoad = 'turbolinks:load';	
+	//var documentLoad = 'turbolinks:load';	
+	var documentLoad = 'DOMContentLoaded';
 } else {
 	var documentLoad = 'DOMContentLoaded';
 }
