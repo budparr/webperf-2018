@@ -44,22 +44,23 @@ isPlainText = true
 mediatype = "text/netlify"
 notAlternative = true
 
-[outputFormats.REDIR]
-baseName = "_redirects"
+[outputFormats.sw]
+baseName = "sw"
 isPlainText = true
-mediatype = "text/netlify"
+mediatype = "application/javascript"
 notAlternative = true
 
 [outputs]
 home = [
 "HTML",
 "HEADERS",
-"REDIR"
+"sw"
 ]
 
 [params]
 description = "Build Faster Better Websites with modern tools and techniques"
 logo = ""
+image_domain = "https://webperf-2018.imgix.net"
 
 
 # [related]

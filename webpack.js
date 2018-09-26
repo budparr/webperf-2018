@@ -10,7 +10,9 @@ class TailwindExtractor {
   }
 }
 
-module.exports = {
+module.exports = env => {
+	console.log("NODE_ENV: ", process.env.NODE_ENV) // 'local'
+	return {
   mode: 'production',
   entry: {
     app: './assets/index.js'
@@ -62,20 +64,15 @@ module.exports = {
                   ],
                   fontFace: false,
                   whitelist: [                    
-                    'bg-primary-color',
-                    'body',
-                    'fill-current',
-                    'hidden',
-                    'install',
-                    'pagination',
-                    'opacity-25',
-                    'results-hidden',
-                    'rounded',
-                    'mx-2',
-                    'bg-red-light',
-                    'bg-grey-darker',
-                    'buttons',
-                    'kill',
+                    'ais-search-box',
+                    'ais-search-box--input',
+                    'ais-search-box--reset',
+                    'ais-search-box--loading-indicator-wrapper',
+                    'ais-search-box--powered-by',
+                    'ais-search-box--powered-by-link',
+                    'ais-search-box--reset-wrapper',
+                    'ais-search-box--reset',
+                    '.ais-search-box--reset svg'
                   ],
                 }),
                 require('autoprefixer')({      
@@ -128,4 +125,5 @@ module.exports = {
       filename: 'css/[name].css',
     }),
   ],
+}
 };

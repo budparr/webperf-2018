@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="grid grid-columns-2 grid-gap-8">
+  <div class="md:grid grid-columns-2 grid-gap-8">
     <div>
       {{ range first 1 (where .Site.RegularPages "Section" "article").Reverse }}
         {{ template "posts" . }}
@@ -14,13 +14,24 @@
     </div>
   </div>  
 
+  <div class="p-8 my-16 bg-grey-lighter">
+    <div id="search-box">
+      <!-- SearchBox widget will appear here -->
+    </div>
+    <div id="hits">
+      <!-- Hits widget will appear here -->
+    </div>  
+  </div>
+  
+
+
   <div class="mb-16 mb-4">
     <h2 class="text-5xl font-black text-black uppercase font-brand">
       Startups
     </h2>
   </div>
   
-  <div class="grid grid-columns-3 grid-gap-16">  
+  <div class="md:grid grid-columns-3 grid-gap-16">  
     {{ range first 15 (after 1 (where .Site.RegularPages "Section" "article")) }}
       {{ template "posts" . }}
     {{ end }}            
@@ -32,7 +43,7 @@
       </h2>
     </div>
     
-    <div class="grid grid-columns-3 grid-gap-16">  
+    <div class="md:grid grid-columns-3 grid-gap-16">  
       {{ range first 100 (after 16 (where .Site.RegularPages "Section" "article")) }}
         {{ template "posts" . }}
       {{ end }}            
@@ -42,8 +53,9 @@
 
 
 {{ define "posts"}}
+  {{ $image := (replace .Params.image "/uploads" .Site.Params.image_domain) }}
   <div class="mb-8">
-    <div class="bg-cover bg-no-repeat h-64 bg-grey-lightest" style="background-image: url({{ .Params.image | absURL }});">
+    <div class="bg-cover bg-no-repeat h-64 bg-grey-lightest lazyload" data-bg="{{ $image }}?{{ querify "w" "450" "auto" "format" "q" "75" | safeURL }}">
       <span class="opacity-0">{{ .Title }}</span>
     </div>
     <div>

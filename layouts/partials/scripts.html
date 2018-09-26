@@ -1,5 +1,5 @@
 <!-- scripts -->
-{{ $scripts := resources.Get "output/js/app.js" | fingerprint }}
+{{ $scripts := resources.Get "output/js/app.js" }}
 {{ with $scripts }}
   {{ $scripts := . | fingerprint }}
   <script type="text/javascript" src="{{ $scripts.Permalink | relURL }}" integrity="{{ $scripts.Data.Integrity }}" crossorigin="anonymous" defer></script>

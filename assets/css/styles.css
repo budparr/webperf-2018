@@ -9,6 +9,7 @@
 
 /* Site Specific */
 @import "site";
+@import "modules/_algolia";
 
 
 @import "tailwindcss/utilities";

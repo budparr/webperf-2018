@@ -1,10 +1,21 @@
 {{ define "main" }}
+  {{ $image := replace .Params.image "/uploads" .Site.Params.image_domain }}
   <div class="max-w-xl mx-auto min-h-screen"> 
     <article class="h-entry mx-auto max-w-lg py-2 lg:pt-5 px-4">
-      <h1 class="text-black text-5xl font-black font-brand">
+      <h1 class="text-black md:text-5xl font-black font-brand">
         {{ .Title }}
       </h1>        
-      <img src="{{ .Params.image }} " alt="" class="max-w-full">          
+
+      <img 
+        data-srcset="{{ $image }}?{{ querify "w" "850" "auto" "format" "q" "75" "fit" "max" | safeURL }} 850w,
+              {{ $image }}?{{ querify "w" "425" "auto" "format" "q" "75" | safeURL }} 425w,
+              {{ $image }}?{{ querify "w" "200" "auto" "format" "q" "75" | safeURL }} 200w"
+        data-src="{{ $image }}?{{ querify "w" "850" "auto" "format" "q" "75" | safeURL }}" 
+        alt="" 
+        class="lazyload max-w-full"
+        sizes="(max-width: 54em) 33.3vw, 100vw" >       
+      
+        
       {{ .Content }}          
     </article>    
     <div class="my-16">
