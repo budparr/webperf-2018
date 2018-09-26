@@ -26,7 +26,8 @@ document.addEventListener(documentLoad, function() {
       	return;
     	}
     	helper.search();
-    //	searchResults.show();
+		//	searchResults.show();
+		console.log('searching')
 		}
 	});
 
